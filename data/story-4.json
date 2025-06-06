@@ -53,7 +53,7 @@
         "id": "s4_intro_choice2",
         "type": "narrative",
         "character": null,
-        "text": "Na koniec dnia do sklepu wchodzi kobieta z reklamacją – buty, które kupiła w zeszłym tygodniu, rozkleiły się. Jest zirytowana i domaga się rekompensaty.",
+        "text": "Na konieccc dnia do sklepu wchodzi kobieta z reklamacją – buty, które kupiła w zeszłym tygodniu, rozkleiły się. Jest zirytowana i domaga się rekompensaty.",
         "emotion": "angry",
         "nextNodeId": "s4_choice2"
       },
