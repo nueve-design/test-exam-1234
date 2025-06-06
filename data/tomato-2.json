@@ -1,0 +1,102 @@
+{
+  "nodes": [
+    {
+      "id": "a2_intro_choice1",
+      "type": "narrative",
+      "character": null,
+      "text": "Zaczynasz przeglądać pomidory na drewnianym stoisku. Słońce zagląda przez otwarte drzwi, a w powietrzu unosi się zapach oregano i kurzu z targu.",
+      "emotion": "smile",
+      "nextNodeId": "a2_choice1"
+    },
+    {
+      "id": "a2_choice1",
+      "type": "choice",
+      "character": null,
+      "text": "Starszy klient, z kapeluszem na głowie i gazetą w dłoni, przysłuchuje się twojej rozmowie i nagle mówi: 'Kiedyś to były pomidory... Teraz? Sztuczne, bez duszy.' Jak odpowiadasz?",
+      "emotion": "shock",
+      "options": [
+        {
+          "text": "Może Pan spróbuje tych – właśnie przyjechały z Sycylii. Mają smak słońca.",
+          "targetNodeId": "a2_branch_pos_neu_1"
+        },
+        {
+          "text": "Wiem, co Pan czuje – ale niektóre odmiany wciąż potrafią zachwycić. Chce Pan spróbować?",
+          "targetNodeId": "a2_branch_pos_neu_1"
+        },
+        {
+          "text": "Każdy tak gada, a potem i tak wszystko zjada.",
+          "targetNodeId": "a2_branch_neg_terr_1"
+        },
+        {
+          "text": "To nie muzeum – tu się kupuje, nie wspomina.",
+          "targetNodeId": "a2_branch_neg_terr_1"
+        }
+      ]
+    },
+    {
+      "id": "a2_branch_pos_neu_1",
+      "type": "narrative",
+      "character": null,
+      "text": "Starszy pan bierze jednego pomidora do ręki i wącha go z namaszczeniem. 'Hmmm... może jednak jest nadzieja.' Uśmiecha się lekko.",
+      "emotion": "smile",
+      "nextNodeId": "a2_intro_choice2"
+    },
+    {
+      "id": "a2_branch_neg_terr_1",
+      "type": "narrative",
+      "character": null,
+      "text": "Mężczyzna burczy coś pod nosem i odchodzi, wzruszając ramionami. Pozostawia za sobą nieprzyjemne napięcie.",
+      "emotion": "angry",
+      "nextNodeId": "a2_intro_choice2"
+    },
+    {
+      "id": "a2_intro_choice2",
+      "type": "narrative",
+      "character": null,
+      "text": "Do sklepu wbiega chłopiec z reklamówką. 'Mamma kazała mi kupić pomidory na niedzielne ragù! Ale nie wiem, które!'",
+      "emotion": "shock",
+      "nextNodeId": "a2_choice2"
+    },
+    {
+      "id": "a2_choice2",
+      "type": "choice",
+      "character": null,
+      "text": "Jak reagujesz?",
+      "emotion": "smile",
+      "options": [
+        {
+          "text": "Podajesz mu odmianę San Marzano i tłumaczysz, że to idealne pomidory na sos.",
+          "targetNodeId": "a2_branch_pos_neu_2"
+        },
+        {
+          "text": "Uśmiechasz się i razem wybieracie najładniejsze sztuki – uczysz go, jak rozpoznać dojrzałe.",
+          "targetNodeId": "a2_branch_pos_neu_2"
+        },
+        {
+          "text": "Wzdychasz i mówisz: 'Weź cokolwiek. Wszystko jedno.'",
+          "targetNodeId": "a2_branch_neg_terr_2"
+        },
+        {
+          "text": "Ignorujesz go i zajmujesz się dalej wybieraniem swoich pomidorów.",
+          "targetNodeId": "a2_branch_neg_terr_2"
+        }
+      ]
+    },
+    {
+      "id": "a2_branch_pos_neu_2",
+      "type": "narrative",
+      "character": null,
+      "text": "Chłopiec patrzy z podziwem. 'Powiem mamie, że pomógł mi prawdziwy kucharz!' Biegnie do kasy z błyszczącymi oczami.",
+      "emotion": "smile",
+      "nextNodeId": "a3_intro_choice1"
+    },
+    {
+      "id": "a2_branch_neg_terr_2",
+      "type": "narrative",
+      "character": null,
+      "text": "Dziecko marszczy nos i bierze pierwszą lepszą siatkę. Mruczy coś do siebie i wychodzi, nie dziękując.",
+      "emotion": "angry",
+      "nextNodeId": "a3_intro_choice1"
+    }
+  ]
+}

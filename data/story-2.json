@@ -1,0 +1,78 @@
+{
+  "nodes": [
+    {
+      "id": "s2_intro_choice1",
+      "type": "narrative",
+      "character": null,
+      "text": "Twoja praca trwa już kilka godzin. Z tyłu sklepu słyszysz jakieś zamieszanie. Kierownik krzyczy na jednego z pracowników za niewłaściwe ułożenie butów na wystawie. Klient przy kasie obserwuje całą sytuację z niepokojem.",
+      "emotion": "shock",
+      "nextNodeId": "s2_choice1"
+    },
+    {
+      "id": "s2_choice1",
+      "type": "choice",
+      "character": null,
+      "text": "Co postanawiasz zrobić?",
+      "emotion": "shock",
+      "options": [
+        {
+          "text": "Podchodzisz do klienta i przepraszasz za zamieszanie, starając się odwrócić jego uwagę.",
+          "targetNodeId": "s2_branch_pos_1"
+        },
+        {
+          "text": "Idźiesz na zaplecze i próbujesz załagodzić sytuację między kierownikiem a pracownikiem.",
+          "targetNodeId": "s2_branch_pos_2"
+        },
+        {
+          "text": "Udajesz, że nic nie słyszysz i kontynuujesz swoją pracę.",
+          "targetNodeId": "s2_branch_neg_1"
+        },
+        {
+          "text": "Dołączasz do kierownika, krytykując pracownika, by zdobyć przychylność szefa.",
+          "targetNodeId": "s2_branch_neg_2"
+        }
+      ]
+    },
+    {
+      "id": "s2_branch_pos_1",
+      "type": "narrative",
+      "character": null,
+      "text": "Podchodzisz do klienta z uśmiechem. 'Przepraszam za zamieszanie. Czy mogę w czymś pomóc?' Klient wydaje się docenić twoje podejście i relaksuje się. Atmosfera w sklepie poprawia się.",
+      "emotion": "smile",
+      "nextNodeId": "s2_conclusion"
+    },
+    {
+      "id": "s2_branch_pos_2",
+      "type": "narrative",
+      "character": null,
+      "text": "Delikatnie wkraczasz w dyskusję, sugerując rozwiązanie problemu. 'Może pomogę przearanżować wystawę?' Twoja propozycja rozładowuje napięcie. Kierownik docenia twoją inicjatywę.",
+      "emotion": "smile",
+      "nextNodeId": "s2_conclusion"
+    },
+    {
+      "id": "s2_branch_neg_1",
+      "type": "narrative",
+      "character": null,
+      "text": "Udajesz, że nic się nie dzieje, ale klient przy kasie czuje się coraz bardziej niekomfortowo. Rzuca ci zaniepokojone spojrzenie i szybko wychodzi ze sklepu bez dokonania zakupu.",
+      "emotion": "angry",
+      "nextNodeId": "s2_conclusion"
+    },
+    {
+      "id": "s2_branch_neg_2",
+      "type": "narrative",
+      "character": null,
+      "text": "Dołączasz do krytyki, ale zauważasz, że pracownik jest głęboko dotknięty. Kierownik wydaje się zadowolony z twojego wsparcia, ale atmosfera w zespole wyraźnie się pogarsza.",
+      "emotion": "angry",
+      "nextNodeId": "s2_conclusion"
+    },
+    {
+      "id": "s2_conclusion",
+      "type": "narrative",
+      "character": null,
+      "text": "Dzień w sklepie powoli dobiega końca. Twoje dzisiejsze decyzje wpłynęły na atmosferę i relacje w zespole. Jutro czeka cię kolejny dzień pełen wyzwań.",
+      "emotion": "smile",
+      "nextNodeId": null
+    }
+  ],
+  "nextStoryFile": null
+} 

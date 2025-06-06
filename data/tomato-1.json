@@ -1,0 +1,102 @@
+{
+    "nodes": [
+      {
+        "id": "a1_intro_choice1",
+        "type": "narrative",
+        "character": null,
+        "text": "Jest upalny poranek w małym włoskim miasteczku. Wchodzisz do sklepiku pachnącego bazylią i czosnkiem. Za ladą stoi starszy mężczyzna w fartuchu poplamionym sosem pomidorowym.",
+        "emotion": "smile",
+        "nextNodeId": "a1_choice1"
+      },
+      {
+        "id": "a1_choice1",
+        "type": "choice",
+        "character": null,
+        "text": "Sprzedawca podnosi wzrok i mówi: 'Buongiorno, szefie kuchni! Czego dziś potrzebujesz do swojej magii?'",
+        "emotion": "smile",
+        "options": [
+          {
+            "text": "Szukam najlepszych pomidorów na klasyczne spaghetti alla puttanesca.",
+            "targetNodeId": "a1_branch_pos_neu_1"
+          },
+          {
+            "text": "Potrzebuję czegoś soczystego – dziś robię zupę pomidorową dla całej trattorii.",
+            "targetNodeId": "a1_branch_pos_neu_1"
+          },
+          {
+            "text": "Cokolwiek czerwonego i taniego – klientom wszystko jedno.",
+            "targetNodeId": "a1_branch_neg_terr_1"
+          },
+          {
+            "text": "Nie mam czasu na gadki – daj co masz i szybko.",
+            "targetNodeId": "a1_branch_neg_terr_1"
+          }
+        ]
+      },
+      {
+        "id": "a1_branch_pos_neu_1",
+        "type": "narrative",
+        "character": null,
+        "text": "Sprzedawca rozpromienia się. 'Mio Dio! W końcu ktoś, kto kocha pomidory tak jak ja!' Z pasją zaczyna opowiadać o swoich ulubionych odmianach.",
+        "emotion": "smile",
+        "nextNodeId": "a1_intro_choice2"
+      },
+      {
+        "id": "a1_branch_neg_terr_1",
+        "type": "narrative",
+        "character": null,
+        "text": "Sprzedawca marszczy brwi. 'To nie jest fast food, ragazzo. Moje pomidory nie lubią być lekceważone.' Atmosfera staje się sztywna.",
+        "emotion": "angry",
+        "nextNodeId": "a1_intro_choice2"
+      },
+      {
+        "id": "a1_intro_choice2",
+        "type": "narrative",
+        "character": null,
+        "text": "Zza regału wychyla się młoda kobieta – prawdopodobnie córka sprzedawcy. Trzyma w dłoni pudełko z ręcznie selekcjonowanymi pomidorami.",
+        "emotion": "shock",
+        "nextNodeId": "a1_choice2"
+      },
+      {
+        "id": "a1_choice2",
+        "type": "choice",
+        "character": null,
+        "text": "'Te są najlepsze na świeżo – do bruschetty lub carpaccio z mozzarellą' – mówi. Jak reagujesz?",
+        "emotion": "smile",
+        "options": [
+          {
+            "text": "Brzmi pysznie! Wezmę dwa kilogramy – dziś testujemy nowe przystawki.",
+            "targetNodeId": "a1_branch_pos_neu_2"
+          },
+          {
+            "text": "A może coś jeszcze bardziej aromatycznego? Mam dziś ważną kolację z krytykiem.",
+            "targetNodeId": "a1_branch_pos_neu_2"
+          },
+          {
+            "text": "Nie potrzebuję porad – wiem, co robię.",
+            "targetNodeId": "a1_branch_neg_terr_2"
+          },
+          {
+            "text": "To tylko pomidory – nie filozofia. Daj mi te z brzegu.",
+            "targetNodeId": "a1_branch_neg_terr_2"
+          }
+        ]
+      },
+      {
+        "id": "a1_branch_pos_neu_2",
+        "type": "narrative",
+        "character": null,
+        "text": "Kobieta się uśmiecha, a sprzedawca dumnie kiwa głową. 'Twój smak jest tak samo dobry jak twój temperament. Taki klient to skarb!' – mówi.",
+        "emotion": "smile",
+        "nextNodeId": "a2_intro_choice1"
+      },
+      {
+        "id": "a1_branch_neg_terr_2",
+        "type": "narrative",
+        "character": null,
+        "text": "Młoda kobieta cofa się bez słowa, a sprzedawca tylko wzdycha. 'Ludzie dziś nie szanują pomidorów ani pracy innych.' Cisza wypełnia sklep.",
+        "emotion": "angry",
+        "nextNodeId": "a2_intro_choice1"
+      }
+    ]
+  }

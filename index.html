@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Novel Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+        }
+        .start-button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .start-button:hover {
+            background-color: #45a049;
+        }
+        .story-select {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            width: 200px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .loading {
+            margin-top: 10px;
+            font-style: italic;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Visual Novel</h1>
+        <div>
+            <select id="story-select" class="story-select">
+                <option value="">Wybierz historię...</option>
+            </select>
+            <div id="loading" class="loading">Ładowanie dostępnych historii...</div>
+        </div>
+        <button class="start-button" id="start-button" disabled>Start</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const storySelect = document.getElementById('story-select');
+            const startButton = document.getElementById('start-button');
+            const loadingDiv = document.getElementById('loading');
+            const availableStories = new Set();
+            
+            // Function to discover all available stories by scanning the data directory
+            function discoverStories() {
+                // Track the number of requests to know when we're done
+                let pendingRequests = 0;
+                let storyFound = false;
+                
+                // Try to find all possible story series
+                const possibleStories = ['story', 'tomato']; // Add more known story bases here
+                
+                // For each possible story series, check if there's at least a part 1
+                possibleStories.forEach(storyBase => {
+                    pendingRequests++;
+                    fetch(`data/${storyBase}-1.json`)
+                        .then(response => {
+                            if (response.ok) {
+                                // This story exists, add it to dropdown
+                                if (!availableStories.has(storyBase)) {
+                                    availableStories.add(storyBase);
+                                    // Create a display name (capitalize first letter)
+                                    const displayName = storyBase.charAt(0).toUpperCase() + storyBase.slice(1);
+                                    
+                                    // Add to dropdown
+                                    const option = document.createElement('option');
+                                    option.value = storyBase;
+                                    option.textContent = displayName;
+                                    storySelect.appendChild(option);
+                                    storyFound = true;
+                                }
+                            }
+                        })
+                        .catch(() => {
+                            // This story doesn't exist, that's fine
+                            console.log(`${storyBase} series not found`);
+                        })
+                        .finally(() => {
+                            pendingRequests--;
+                            if (pendingRequests === 0) {
+                                // We've checked all known story bases
+                                finishLoading(storyFound);
+                            }
+                        });
+                });
+                
+                // Also scan the data directory for any other -1.json files
+                scanForUnknownStories();
+            }
+            
+            // Scan for any other story files that might exist
+            function scanForUnknownStories() {
+                // Use a server-side script to list files (this is just a mock function)
+                // In a real setup, you would need a backend script to list directory contents
+                // For demo purposes, let's manually check a few possible options
+                const possibleUnknownStories = ['maria', 'john', 'adventure', 'mystery'];
+                
+                possibleUnknownStories.forEach(storyBase => {
+                    fetch(`data/${storyBase}-1.json`)
+                        .then(response => {
+                            if (response.ok) {
+                                // This story exists, add it to dropdown if not already there
+                                if (!availableStories.has(storyBase)) {
+                                    availableStories.add(storyBase);
+                                    // Create a display name (capitalize first letter)
+                                    const displayName = storyBase.charAt(0).toUpperCase() + storyBase.slice(1);
+                                    
+                                    // Add to dropdown
+                                    const option = document.createElement('option');
+                                    option.value = storyBase;
+                                    option.textContent = displayName;
+                                    storySelect.appendChild(option);
+                                }
+                            }
+                        })
+                        .catch(() => {
+                            // This story doesn't exist, that's fine
+                        });
+                });
+            }
+            
+            // Called when all story discovery is complete
+            function finishLoading(storyFound) {
+                loadingDiv.style.display = 'none';
+                
+                if (storyFound) {
+                    storySelect.disabled = false;
+                    // Select the first actual story option (skip the placeholder)
+                    if (storySelect.options.length > 1) {
+                        storySelect.selectedIndex = 1;
+                        startButton.disabled = false;
+                    }
+                } else {
+                    // No stories found
+                    const option = document.createElement('option');
+                    option.value = "";
+                    option.textContent = "Nie znaleziono historii";
+                    storySelect.appendChild(option);
+                    startButton.disabled = true;
+                }
+            }
+            
+            // Enable/disable the start button based on selection
+            storySelect.addEventListener('change', function() {
+                startButton.disabled = !storySelect.value;
+            });
+            
+            // Start button event listener
+            startButton.addEventListener('click', function() {
+                const selectedStory = storySelect.value;
+                if (selectedStory) {
+                    window.location.href = `story.html?story=${selectedStory}`;
+                }
+            });
+            
+            // Start discovery process
+            discoverStories();
+        });
+    </script>
+</body>
+</html> 

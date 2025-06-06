@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - ShadCN Example</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        /* ShadCN CSS Variables */
+        :root {
+            --background: 0 0% 100%;
+            --foreground: 222.2 84% 4.9%;
+            --card: 0 0% 100%;
+            --card-foreground: 222.2 84% 4.9%;
+            --popover: 0 0% 100%;
+            --popover-foreground: 222.2 84% 4.9%;
+            --primary: 222.2 47.4% 11.2%;
+            --primary-foreground: 210 40% 98%;
+            --secondary: 210 40% 96%;
+            --secondary-foreground: 222.2 47.4% 11.2%;
+            --muted: 210 40% 96%;
+            --muted-foreground: 215.4 16.3% 46.9%;
+            --accent: 210 40% 96%;
+            --accent-foreground: 222.2 47.4% 11.2%;
+            --destructive: 0 84.2% 60.2%;
+            --destructive-foreground: 210 40% 98%;
+            --border: 214.3 31.8% 91.4%;
+            --input: 214.3 31.8% 91.4%;
+            --ring: 222.2 84% 4.9%;
+            --radius: 0.5rem;
+        }
+        
+        .dark {
+            --background: 222.2 84% 4.9%;
+            --foreground: 210 40% 98%;
+            --card: 222.2 84% 4.9%;
+            --card-foreground: 210 40% 98%;
+            --popover: 222.2 84% 4.9%;
+            --popover-foreground: 210 40% 98%;
+            --primary: 210 40% 98%;
+            --primary-foreground: 222.2 47.4% 11.2%;
+            --secondary: 217.2 32.6% 17.5%;
+            --secondary-foreground: 210 40% 98%;
+            --muted: 217.2 32.6% 17.5%;
+            --muted-foreground: 215 20.2% 65.1%;
+            --accent: 217.2 32.6% 17.5%;
+            --accent-foreground: 210 40% 98%;
+            --destructive: 0 62.8% 30.6%;
+            --destructive-foreground: 210 40% 98%;
+            --border: 217.2 32.6% 17.5%;
+            --input: 217.2 32.6% 17.5%;
+            --ring: 212.7 26.8% 83.9%;
+        }
+
+        /* ShadCN Component Styles */
+        .bg-background { background-color: hsl(var(--background)); }
+        .bg-card { background-color: hsl(var(--card)); }
+        .bg-muted { background-color: hsl(var(--muted)); }
+        .bg-primary { background-color: hsl(var(--primary)); }
+        .bg-secondary { background-color: hsl(var(--secondary)); }
+        
+        .text-foreground { color: hsl(var(--foreground)); }
+        .text-muted-foreground { color: hsl(var(--muted-foreground)); }
+        .text-primary-foreground { color: hsl(var(--primary-foreground)); }
+        
+        .border-border { border-color: hsl(var(--border)); }
+        .border-input { border-color: hsl(var(--input)); }
+        
+        .focus\:ring-ring:focus { box-shadow: 0 0 0 2px hsl(var(--ring)); }
+        
+        .btn-primary {
+            background-color: hsl(var(--primary));
+            color: hsl(var(--primary-foreground));
+            padding: 0.5rem 1rem;
+            border-radius: calc(var(--radius) - 2px);
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        
+        .btn-primary:hover {
+            background-color: hsl(var(--primary) / 0.9);
+        }
+        
+        .btn-secondary {
+            background-color: hsl(var(--secondary));
+            color: hsl(var(--secondary-foreground));
+            padding: 0.75rem;
+            border-radius: 9999px;
+            transition: all 0.2s;
+        }
+        
+        .btn-secondary:hover {
+            background-color: hsl(var(--secondary) / 0.8);
+        }
+        
+        .card {
+            background-color: hsl(var(--card));
+            border: 1px solid hsl(var(--border));
+            border-radius: calc(var(--radius));
+            box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+        }
+        
+        .input {
+            background-color: hsl(var(--background));
+            border: 1px solid hsl(var(--border));
+            border-radius: calc(var(--radius) - 2px);
+            padding: 0.5rem 0.75rem;
+            transition: all 0.2s;
+        }
+        
+        .input:focus {
+            outline: none;
+            border-color: hsl(var(--ring));
+            box-shadow: 0 0 0 2px hsl(var(--ring) / 0.2);
+        }
+
+        .checkbox {
+            width: 1rem;
+            height: 1rem;
+            background-color: hsl(var(--primary));
+            border: 1px solid hsl(var(--primary));
+            border-radius: 0.125rem;
+        }
+    </style>
+</head>
+<body class="bg-background text-foreground">
+    <!-- Header -->
+    <header class="bg-background border-b border-border h-16 flex items-center justify-between px-6">
+        <!-- Left Navigation -->
+        <div class="flex items-center space-x-6">
+            <!-- Logo -->
+            <div class="flex items-center space-x-6">
+                <i data-lucide="package-2" class="w-6 h-6"></i>
+                
+                <!-- Navigation Menu -->
+                <nav class="flex items-center space-x-6">
+                    <a href="#" class="text-muted-foreground hover:text-foreground transition-colors">Dashboard</a>
+                    <a href="#" class="text-muted-foreground hover:text-foreground transition-colors">Orders</a>
+                    <a href="#" class="text-muted-foreground hover:text-foreground transition-colors">Products</a>
+                    <a href="#" class="text-muted-foreground hover:text-foreground transition-colors">Customers</a>
+                    <a href="#" class="text-foreground font-medium">Settings</a>
+                </nav>
+            </div>
+        </div>
+        
+        <!-- Right Section -->
+        <div class="flex items-center space-x-4">
+            <!-- Search Input -->
+            <div class="relative w-80">
+                <i data-lucide="search" class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground"></i>
+                <input type="text" placeholder="Search..." class="input pl-10 w-full h-10">
+            </div>
+            
+            <!-- User Avatar -->
+            <button class="btn-secondary">
+                <i data-lucide="circle-user" class="w-4 h-4"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="bg-muted min-h-[calc(100vh-4rem)] p-10">
+        <!-- Page Title -->
+        <h1 class="text-3xl font-bold text-foreground mb-8">Settings</h1>
+        
+        <!-- Content Layout -->
+        <div class="flex gap-8">
+            <!-- Sidebar Navigation -->
+            <aside class="w-48">
+                <nav class="space-y-4">
+                    <a href="#" class="block text-foreground font-medium hover:text-foreground transition-colors">General</a>
+                    <a href="#" class="block text-muted-foreground hover:text-foreground transition-colors">Security</a>
+                    <a href="#" class="block text-muted-foreground hover:text-foreground transition-colors">Integrations</a>
+                    <a href="#" class="block text-muted-foreground hover:text-foreground transition-colors">Support</a>
+                    <a href="#" class="block text-muted-foreground hover:text-foreground transition-colors">Organizations</a>
+                    <a href="#" class="block text-muted-foreground hover:text-foreground transition-colors">Advanced</a>
+                </nav>
+            </aside>
+            
+            <!-- Main Content Area -->
+            <div class="flex-1 space-y-6">
+                <!-- Store Name Card -->
+                <div class="card p-6">
+                    <div class="space-y-6">
+                        <!-- Card Header -->
+                        <div class="space-y-1.5">
+                            <h3 class="text-xl font-semibold text-foreground">Store Name</h3>
+                            <p class="text-muted-foreground">Used to identify your store in the marketplace.</p>
+                        </div>
+                        
+                        <!-- Input Field -->
+                        <div class="space-y-2">
+                            <input type="text" placeholder="Placeholder" class="input w-full h-10">
+                        </div>
+                    </div>
+                    
+                    <!-- Card Footer -->
+                    <div class="border-t border-border mt-6 pt-4">
+                        <button class="btn-primary">
+                            <i data-lucide="plus" class="w-4 h-4 mr-2"></i>
+                            Save
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Plugins Directory Card -->
+                <div class="card p-6">
+                    <div class="space-y-6">
+                        <!-- Card Header -->
+                        <div class="space-y-1.5">
+                            <h3 class="text-xl font-semibold text-foreground">Plugins Directory</h3>
+                            <p class="text-muted-foreground">The directory within your project, in which your plugins are located.</p>
+                        </div>
+                        
+                        <!-- Form Content -->
+                        <div class="space-y-4">
+                            <!-- Input Field -->
+                            <div class="space-y-2">
+                                <input type="text" placeholder="Placeholder" class="input w-full h-10">
+                            </div>
+                            
+                            <!-- Checkbox -->
+                            <div class="flex items-center space-x-3">
+                                <input type="checkbox" class="checkbox" checked>
+                                <label class="text-sm text-foreground">Allow administrators to change the directory.</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card Footer -->
+                    <div class="border-t border-border mt-6 pt-4">
+                        <button class="btn-primary">
+                            <i data-lucide="plus" class="w-4 h-4 mr-2"></i>
+                            Save
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+{
+  "nodes": [
+    {
+      "id": "s1_intro_choice1",
+      "type": "narrative",
+      "character": null,
+      "text": "Punktualnie o dziesiątej otwierasz drzwi swojego sklepu obuwniczego. Dzień zaczyna się spokojnie, ale po chwili do środka wchodzi młoda kobieta, z lekkim pośpiechem i telefonem przy uchu. Rozgląda się nerwowo.",
+      "emotion": "smile",
+      "nextNodeId": "s1_choice1"
+    },
+    {
+      "id": "s1_choice1",
+      "type": "choice",
+      "character": null,
+      "text": "Kobieta rozłącza się i mówi: 'Dzień dobry, potrzebuję butów na rozmowę o pracę. Ma być elegancko, ale wygodnie. Co polecasz?'",
+      "emotion": "shock",
+      "options": [
+        {
+          "text": "Polecam klasyczne czarne czółenka na niskim obcasie. Idealne połączenie elegancji i komfortu.",
+          "targetNodeId": "s1_branch_pos_neu_1"
+        },
+        {
+          "text": "Możemy dobrać coś do stylu stroju. Jaki zestaw Pani planuje założyć?",
+          "targetNodeId": "s1_branch_pos_neu_1"
+        },
+        {
+          "text": "Na rozmowę o pracę? Hm... może baleriny z tej półki?",
+          "targetNodeId": "s1_branch_neg_terr_1"
+        },
+        {
+          "text": "Nie wiem, co się teraz nosi na takie okazje. Może coś sportowego?",
+          "targetNodeId": "s1_branch_neg_terr_1"
+        }
+      ]
+    },
+    {
+      "id": "s1_branch_pos_neu_1",
+      "type": "narrative",
+      "character": null,
+      "text": "Kobieta kiwa głową z zainteresowaniem. 'O, to brzmi rozsądnie. Garnitur mam granatowy, więc czerń będzie pasować.' Zaczynacie rozmawiać o preferencjach i dopasowaniu do reszty stroju.",
+      "emotion": "smile",
+      "nextNodeId": "s1_intro_choice2"
+    },
+    {
+      "id": "s1_branch_neg_terr_1",
+      "type": "narrative",
+      "character": null,
+      "text": "Kobieta marszczy brwi i zaczyna się rozglądać samodzielnie. 'Dziękuję, chyba tylko się rozejrzę...' – mówi chłodno. Atmosfera staje się napięta.",
+      "emotion": "angry",
+      "nextNodeId": "s1_intro_choice2"
+    },
+    {
+      "id": "s1_intro_choice2",
+      "type": "narrative",
+      "character": null,
+      "text": "Po kilku minutach do sklepu wchodzi starszy pan, trzymający w dłoni kartkę z listą. 'Dzień dobry, moja żona kazała mi kupić buty dla wnuczki. Coś na szkolne przedstawienie. Pomóżesz?'",
+      "emotion": "smile",
+      "nextNodeId": "s1_choice2"
+    },
+    {
+      "id": "s1_choice2",
+      "type": "choice",
+      "character": null,
+      "text": "Jak odpowiadasz starszemu panu?",
+      "emotion": "shock",
+      "options": [
+        {
+          "text": "Oczywiście, zaraz pokażę kilka dziewczęcych modeli – eleganckich, ale wygodnych.",
+          "targetNodeId": "s1_branch_pos_neu_2"
+        },
+        {
+          "text": "Czy ma Pan jakieś wytyczne – kolor, rozmiar? Może zdjęcie stroju?",
+          "targetNodeId": "s1_branch_pos_neu_2"
+        },
+        {
+          "text": "Dla dziewczynki? Może te brokatowe trampki? Wszystkie dzieci je teraz noszą.",
+          "targetNodeId": "s1_branch_neg_terr_2"
+        },
+        {
+          "text": "Nie wiem, nie mam dzieci, więc trudno mi coś doradzić.",
+          "targetNodeId": "s1_branch_neg_terr_2"
+        }
+      ]
+    },
+    {
+      "id": "s1_branch_pos_neu_2",
+      "type": "narrative",
+      "character": null,
+      "text": "Starszy pan się uśmiecha. 'Dziękuję, nie znam się na tym, ale wygląda to dobrze.' Wspólnie przeglądacie dostępne modele i zaczynacie wybierać odpowiednie opcje.",
+      "emotion": "smile",
+      "nextNodeId": "s2_intro_choice1"
+    },
+    {
+      "id": "s1_branch_neg_terr_2",
+      "type": "narrative",
+      "character": null,
+      "text": "'Eee… może wrócę z żoną' – mówi zakłopotany i zaczyna zmierzać w stronę drzwi. Wygląda na zniechęconego całą sytuacją.",
+      "emotion": "angry",
+      "nextNodeId": "s2_intro_choice1"
+    }
+  ]
+}

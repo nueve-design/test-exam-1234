@@ -1,0 +1,102 @@
+{
+    "nodes": [
+      {
+        "id": "s3_intro_choice1",
+        "type": "narrative",
+        "character": null,
+        "text": "Następnego dnia do sklepu wchodzi młoda para – wyglądają na zagubionych. Kobieta trzyma w ręku suknię ślubną, a mężczyzna ma minę, jakby wolał być gdziekolwiek indziej.",
+        "emotion": "shock",
+        "nextNodeId": "s3_choice1"
+      },
+      {
+        "id": "s3_choice1",
+        "type": "choice",
+        "character": null,
+        "text": "Kobieta mówi: 'Potrzebuję butów na ślub – muszą być wygodne, ale też piękne. A on potrzebuje czegoś, żeby pasować do garnituru.' Jak reagujesz?",
+        "emotion": "smile",
+        "options": [
+          {
+            "text": "Gratuluję i zapraszam do obejrzenia naszej eleganckiej kolekcji ślubnej – zarówno damskiej, jak i męskiej.",
+            "targetNodeId": "s3_branch_pos_neu_1"
+          },
+          {
+            "text": "Zadaję kilka pytań o styl sukni i garnituru, by lepiej dopasować propozycje.",
+            "targetNodeId": "s3_branch_pos_neu_1"
+          },
+          {
+            "text": "Wskazuję ręką na ogólną półkę z eleganckimi butami i zostawiam ich samych.",
+            "targetNodeId": "s3_branch_neg_terr_1"
+          },
+          {
+            "text": "Mówię, że nie mamy specjalnej oferty ślubnej i radzę poszukać gdzie indziej.",
+            "targetNodeId": "s3_branch_neg_terr_1"
+          }
+        ]
+      },
+      {
+        "id": "s3_branch_pos_neu_1",
+        "type": "narrative",
+        "character": null,
+        "text": "Para wygląda na mile zaskoczoną twoją uprzejmością i zaangażowaniem. Kobieta mówi: 'O, właśnie takiego podejścia szukałam!' Zaczynacie wspólne przymiarki.",
+        "emotion": "smile",
+        "nextNodeId": "s3_intro_choice2"
+      },
+      {
+        "id": "s3_branch_neg_terr_1",
+        "type": "narrative",
+        "character": null,
+        "text": "Para wymienia niezręczne spojrzenia. Mężczyzna wzdycha, kobieta patrzy na ciebie z lekkim rozczarowaniem. 'Dobrze, to może wrócimy później...' – mówi i wychodzą.",
+        "emotion": "angry",
+        "nextNodeId": "s3_intro_choice2"
+      },
+      {
+        "id": "s3_intro_choice2",
+        "type": "narrative",
+        "character": null,
+        "text": "Po południu do sklepu wchodzi mama z dwójką rozbrykanych dzieci. 'Potrzebujemy butów na WF i coś codziennego dla starszego syna. Macie coś trwałego?'",
+        "emotion": "shock",
+        "nextNodeId": "s3_choice2"
+      },
+      {
+        "id": "s3_choice2",
+        "type": "choice",
+        "character": null,
+        "text": "Jak reagujesz?",
+        "emotion": "smile",
+        "options": [
+          {
+            "text": "Prowadzisz ich do działu dziecięcego i pokazujesz modele sprawdzone w szkole – solidne i wygodne.",
+            "targetNodeId": "s3_branch_pos_neu_2"
+          },
+          {
+            "text": "Proponujesz kilka modeli i pytasz dzieci, co im się podoba – wciągasz je w zabawę i wybór.",
+            "targetNodeId": "s3_branch_pos_neu_2"
+          },
+          {
+            "text": "Mówisz, że wszystko jest na tej półce i że muszą sobie sami poszukać.",
+            "targetNodeId": "s3_branch_neg_terr_2"
+          },
+          {
+            "text": "Wzdychasz i odpowiadasz: 'Dzieci to nie moja specjalność', po czym się oddalasz.",
+            "targetNodeId": "s3_branch_neg_terr_2"
+          }
+        ]
+      },
+      {
+        "id": "s3_branch_pos_neu_2",
+        "type": "narrative",
+        "character": null,
+        "text": "Mama wygląda na wdzięczną, a dzieci chichoczą, przymierzając buty i biegając między półkami. Zakupy przebiegają sprawnie i w dobrej atmosferze.",
+        "emotion": "smile",
+        "nextNodeId": "s4_intro_choice1"
+      },
+      {
+        "id": "s3_branch_neg_terr_2",
+        "type": "narrative",
+        "character": null,
+        "text": "Kobieta kręci głową i zbiera dzieci. 'Chodźcie, spróbujemy gdzie indziej...' – mówi chłodno. Odchodzą bez słowa.",
+        "emotion": "angry",
+        "nextNodeId": "s4_intro_choice1"
+      }
+    ]
+  }

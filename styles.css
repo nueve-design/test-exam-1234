@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.game-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-image: url('img/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.game-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, 
+        rgba(24, 9, 3, 0.7) 0%, 
+        rgba(24, 9, 3, 1) 100%);
+    z-index: 1;
+}
+
+.choices-container {
+    position: absolute;
+    left: 50%;
+    top: 41.2%;
+    transform: translateX(-50%);
+    width: 604px;
+    height: 178px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.choice-button {
+    width: 374px;
+    height: 40px;
+    border: 1px solid white;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    font-size: 16px;
+    line-height: 28px;
+    color: white;
+    border-radius: 0;
+    transition: background-color 0.3s;
+}
+
+.choice-button.selected {
+    background: white;
+    border: none;
+    color: rgb(50, 30, 15);
+    padding-left: 19px;
+}
+
+.choice-button:hover:not(.selected) {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.choice-text {
+    width: 100%;
+    text-align: left;
+    font-family: Arial, sans-serif;
+}
+
+.narration-box {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 372px;
+    z-index: 2;
+}
+
+.narration-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 42px 12px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.client-avatar {
+    width: 330px;
+    height: 330px;
+    flex-shrink: 0;
+}
+
+.client-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.narrative-text-container {
+    flex: 1;
+    height: 118px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 0;
+}
+
+.narrative-text {
+    color: white;
+    font-size: 32px;
+    line-height: 38px;
+    font-family: Arial, sans-serif;
+    margin-top: 40px;
+}
+
+ 

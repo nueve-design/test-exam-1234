@@ -1,0 +1,118 @@
+{
+    "nodes": [
+      {
+        "id": "s4_intro_choice1",
+        "type": "narrative",
+        "character": null,
+        "text": "To już ostatnia godzina pracy. Do sklepu wpada dostawca z opóźnioną przesyłką. Brakuje kilku modeli, które miały być na promocję. Kierownik wygląda na bardzo zdenerwowanego.",
+        "emotion": "shock",
+        "nextNodeId": "s4_choice1"
+      },
+      {
+        "id": "s4_choice1",
+        "type": "choice",
+        "character": null,
+        "text": "Jak reagujesz na kryzys z dostawą?",
+        "emotion": "shock",
+        "options": [
+          {
+            "text": "Od razu proponujesz alternatywne modele i oferujesz przygotowanie nowej ekspozycji.",
+            "targetNodeId": "s4_branch_pos_neu_1"
+          },
+          {
+            "text": "Sugerujesz, by przeczekać i skupić się na aktualnym stanie magazynu – może nie będzie tak źle.",
+            "targetNodeId": "s4_branch_pos_neu_1"
+          },
+          {
+            "text": "Stwierdzasz, że to nie twoja sprawa i wracasz do obsługi klientów.",
+            "targetNodeId": "s4_branch_neg_terr_1"
+          },
+          {
+            "text": "Mówisz do kierownika: 'Znowu coś zawaliłeś? To nie moja wina.'",
+            "targetNodeId": "s4_branch_neg_terr_1"
+          }
+        ]
+      },
+      {
+        "id": "s4_branch_pos_neu_1",
+        "type": "narrative",
+        "character": null,
+        "text": "Twoja szybka reakcja uspokaja sytuację. Kierownik oddycha z ulgą, a dostawca dziękuje za wyrozumiałość. W sklepie udaje się uniknąć chaosu.",
+        "emotion": "smile",
+        "nextNodeId": "s4_intro_choice2"
+      },
+      {
+        "id": "s4_branch_neg_terr_1",
+        "type": "narrative",
+        "character": null,
+        "text": "Atmosfera się pogarsza. Kierownik jest coraz bardziej spięty, dostawca wzrusza ramionami i wychodzi, a pracownicy rzucają ci nieprzychylne spojrzenia.",
+        "emotion": "angry",
+        "nextNodeId": "s4_intro_choice2"
+      },
+      {
+        "id": "s4_intro_choice2",
+        "type": "narrative",
+        "character": null,
+        "text": "Na koniec dnia do sklepu wchodzi kobieta z reklamacją – buty, które kupiła w zeszłym tygodniu, rozkleiły się. Jest zirytowana i domaga się rekompensaty.",
+        "emotion": "angry",
+        "nextNodeId": "s4_choice2"
+      },
+      {
+        "id": "s4_choice2",
+        "type": "choice",
+        "character": null,
+        "text": "Jak rozwiążesz sytuację z reklamacją?",
+        "emotion": "shock",
+        "options": [
+          {
+            "text": "Zachowujesz spokój, przepraszasz i od razu proponujesz wymianę lub zwrot pieniędzy.",
+            "targetNodeId": "s4_ending_good"
+          },
+          {
+            "text": "Prosisz o chwilę i konsultujesz się z kierownikiem, starając się znaleźć kompromis.",
+            "targetNodeId": "s4_ending_srednie"
+          },
+          {
+            "text": "Mówisz, że nie możesz pomóc i że musi napisać oficjalne zgłoszenie online.",
+            "targetNodeId": "s4_ending_slabe"
+          },
+          {
+            "text": "Odpowiadasz oschle: 'Nie moja wina, trzeba było kupić coś porządnego.'",
+            "targetNodeId": "s4_ending_okropne"
+          }
+        ]
+      },
+      {
+        "id": "s4_ending_good",
+        "type": "ending",
+        "character": null,
+        "text": "Dzięki twojej empatii i profesjonalizmowi klientka odchodzi zadowolona. Kierownik chwali twoją postawę i wspomina o awansie. Zespół szanuje cię za opanowanie. To był twój najlepszy dzień w pracy.",
+        "emotion": "smile",
+        "endingType": "dobre"
+      },
+      {
+        "id": "s4_ending_srednie",
+        "type": "ending",
+        "character": null,
+        "text": "Sprawa z reklamacją została rozwiązana, choć klientka wyszła nieco niezadowolona. Kierownik docenił, że nie eskalowałeś sytuacji, ale zasugerował więcej inicjatywy w przyszłości.",
+        "emotion": "smile",
+        "endingType": "srednie"
+      },
+      {
+        "id": "s4_ending_slabe",
+        "type": "ending",
+        "character": null,
+        "text": "Kobieta wychodzi zdenerwowana i obiecuje napisać skargę. Kierownik nie jest zadowolony z twojej reakcji. Masz poczucie, że mogłeś to lepiej rozegrać.",
+        "emotion": "angry",
+        "endingType": "slabe"
+      },
+      {
+        "id": "s4_ending_okropne",
+        "type": "ending",
+        "character": null,
+        "text": "Klientka wychodzi wściekła, rzucając w twoją stronę oskarżenia. Kierownik natychmiast zwołuje rozmowę dyscyplinującą. Atmosfera w pracy staje się lodowata. To był katastrofalny dzień.",
+        "emotion": "angry",
+        "endingType": "okropne"
+      }
+    ]
+  }

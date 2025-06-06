@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Novel Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="choices-container">
+            <button class="choice-button selected" id="choice1" onclick="makeChoice(0)">Well it's fucked up right?</button>
+            <button class="choice-button" id="choice2" onclick="makeChoice(1)">I dont really know, its her fault</button>
+            <button class="choice-button" id="choice3" onclick="makeChoice(2)">Well it's fucked up right?</button>
+            <button class="choice-button" id="choice4" onclick="makeChoice(3)">Let's go and run it</button>
+        </div>
+        
+        <div class="narration-box">
+            <div class="narration-content">
+                <div class="client-avatar">
+                    <img src="img/smile.png" alt="Client Avatar">
+                </div>
+                <div class="narrative-text-container">
+                    <div class="narrative-text" id="narration">
+                        Client: What do you think about this situation?
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
